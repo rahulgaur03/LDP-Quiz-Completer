@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<body>
+    <div class="container">
+        <div class="login-box" hidden>
+            <h2>Login</h2>
+            <form action="/execute" method="post">
+                <div class="input-box">
+                    <input type="url" name="quizurl" required>
+                    <label>Quiz URL</label>
+                </div>
+                <div class="radio-box">
+                    <input id="radio-1" type="radio" name="option" value="a" checked="checked"/>
+                    <label for="radio-1">Fill</label>
+            
+                    <input id="radio-2" type="radio" name="option" value="b"/>
+                    <label for="radio-2">Fill + GPT</label>
+            
+                    <input id="radio-3" type="radio" name="option" value="c"/>
+                    <label for="radio-3">GPT</label>
+                </div>
+                <div class="input-box" id="second-textbox">
+                    <input type="text" name="fillvalue" disabled>
+                    <label>Fill Value</label>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form> 
+        </div>
+        <h1 class="progresswindow" hidden>Rahul</h1>
+
+        <span style="--i:0;"></span>
+        <span style="--i:1;"></span>
+        <span style="--i:2;"></span>
+        <span style="--i:3;"></span>
+        <span style="--i:4;"></span>
+        <span style="--i:5;"></span>
+        <span style="--i:6;"></span>
+        <span style="--i:7;"></span>
+        <span style="--i:8;"></span>
+        <span style="--i:9;"></span>
+        <span style="--i:10;"></span>
+        <span style="--i:11;"></span>
+        <span style="--i:12;"></span>
+        <span style="--i:13;"></span>
+        <span style="--i:14;"></span>
+        <span style="--i:15;"></span>
+        <span style="--i:16;"></span>
+        <span style="--i:17;"></span>
+        <span style="--i:18;"></span>
+        <span style="--i:19;"></span>
+        <span style="--i:20;"></span>
+        <span style="--i:21;"></span>
+        <span style="--i:22;"></span>
+        <span style="--i:23;"></span>
+        <span style="--i:24;"></span>
+        <span style="--i:25;"></span>
+        <span style="--i:26;"></span>
+        <span style="--i:27;"></span>
+        <span style="--i:28;"></span>
+        <span style="--i:29;"></span>
+        <span style="--i:30;"></span>
+        <span style="--i:31;"></span>
+        <span style="--i:32;"></span>
+        <span style="--i:33;"></span>
+        <span style="--i:34;"></span>
+        <span style="--i:35;"></span>
+        <span style="--i:36;"></span>
+        <span style="--i:37;"></span>
+        <span style="--i:38;"></span>
+        <span style="--i:39;"></span>
+        <span style="--i:40;"></span>
+        <span style="--i:41;"></span>
+        <span style="--i:42;"></span>
+        <span style="--i:43;"></span>
+        <span style="--i:44;"></span>
+        <span style="--i:45;"></span>
+        <span style="--i:46;"></span>
+        <span style="--i:47;"></span>
+        <span style="--i:48;"></span>
+        <span style="--i:49;"></span>
+    </div>
+    
+    <div class="prompt">Made With 𓆩🖤𓆪 By Guru</li></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var radioOption = document.querySelectorAll('input[name="option"]');
+            const input = document.querySelector("#second-textbox input");
+            input.removeAttribute("disabled");
+            radioOption.forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    if (this.value === 'a' || this.value === 'b') {
+                        input.removeAttribute("disabled");
+                    } else {
+                        input.value = "";
+                        input.setAttribute("disabled", "true");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</body>
+</html>
