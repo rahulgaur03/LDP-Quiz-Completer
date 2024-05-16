@@ -40,9 +40,7 @@ def execute():
 
     def ClickScrollButton(ChatGPTPage):
         try:
-            scroll_button = WebDriverWait(ChatGPTPage, 2).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "".icon-md m-1 text-token-text-primary""))
-            )
+            scroll_button = WebDriverWait(ChatGPTPage, 2).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".icon-md m-1 text-token-text-primary")))
             scroll_button.click()
         except Exception as e:
             pass
@@ -92,7 +90,7 @@ def execute():
         ChatGPTPage.quit()
     RunningStatus = "Love ya 😘, gotta fly!!!"
     time.sleep(2)
-    return "Bye bye!!!"
+    return "Bye bye, Please close app.!!!"
 
 if __name__ == '__main__':  
     port = random.randint(1000, 9999)
