@@ -41,7 +41,7 @@ def execute():
     def ClickScrollButton(ChatGPTPage):
         try:
             scroll_button = WebDriverWait(ChatGPTPage, 2).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, ".cursor-pointer.absolute.z-10.rounded-full.bg-clip-padding.border.text-token-text-secondary"))
+                EC.presence_of_element_located((By.CSS_SELECTOR, "".icon-md m-1 text-token-text-primary""))
             )
             scroll_button.click()
         except Exception as e:
