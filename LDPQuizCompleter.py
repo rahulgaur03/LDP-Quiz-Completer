@@ -1,5 +1,5 @@
 from flaskwebgui import FlaskUI
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, redirect, render_template, request, jsonify, url_for
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys 
@@ -16,6 +16,10 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template('index.html')
+
+@app.route('/favicon.ico')
+def favicon():
+    return redirect(url_for('static', filename='/logo/favicon.ico'))
 
 @app.route("/progress" , methods=['GET'])
 def progress():
@@ -97,6 +101,4 @@ if __name__ == '__main__':
     FlaskUI(app=app, server="flask",width=1200, height=800, port=port).run()
 
 
-
 # pyinstaller --onefile --noconsole --icon=C:\Users\RahulGaurMAQSoftware\Desktop\Temp\ldp.jpg LDPQuizCompleter.py --add-data "static;static" --add-data "templates;templates"
-# pyinstaller --onefile --noconsole LDPQuizCompleter.py --add-data "static;static" --add-data "templates;templates"

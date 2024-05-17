@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <title>LDP Quiz Completer</title>
 </head>
-
-<body>
-
     <body>
+        <div class="popup">
+            <p class="popup-body"></p>
+        </div> 
         <div class="container">
             <div class="login-box">
                 <h2>Quiz Info</h2>
@@ -21,13 +22,13 @@
                     </div>
                     <div class="radio-box">
                         <input id="radio-1" type="radio" name="option" value="a" checked="checked" />
-                        <label for="radio-1">Fill</label>
+                        <label for="radio-1" onmouseover="ShowInformation('Fill: Enter the same value for all questions, such as 1 initially, then 2, and so forth. This method helps clear exams in 3-4 attempts.')" onmouseleave="HideInformation()">Fill</label>
 
                         <input id="radio-2" type="radio" name="option" value="b" />
-                        <label for="radio-2">Fill + GPT</label>
+                        <label for="radio-2" onmouseover="ShowInformation('Fill + GPT: Similar to the first option, but questions with a weightage higher than 1 will be answered by ChatGPT. (Preferred method).')" onmouseleave="HideInformation()">Fill + GPT</label>
 
                         <input id="radio-3" type="radio" name="option" value="c" />
-                        <label for="radio-3">GPT</label>
+                        <label for="radio-3" onmouseover="ShowInformation('GPT: ChatGPT will answer all quiz questions, but this option may take longer than others and some answers may be incorrect.')" onmouseleave="HideInformation()">GPT</label>
                     </div>
                     <div class="input-box" id="second-textbox">
                         <input type="text" name="fillvalue" disabled>
@@ -126,6 +127,18 @@
 
             }
 
+            function ShowInformation(message) {
+                const progress = document.querySelector('.popup-body');
+                progress.innerHTML = message;
+
+            }
+
+            function HideInformation (){
+                const progress = document.querySelector('.popup-body');
+                progress.innerHTML = "";
+
+            }
+
             function RunningStatus() {
                 const interval = setInterval(() => {
                     fetch('/progress')
@@ -147,6 +160,5 @@
             }
         </script>
     </body>
-</body>
 
 </html>

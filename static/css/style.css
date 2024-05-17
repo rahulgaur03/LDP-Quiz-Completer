@@ -160,3 +160,14 @@ input[name="option"]:checked+label:hover {
     color: #0ef;
     text-align: center;
 }
+
+.popup {
+    position: absolute;
+    margin-top: -55%;
+    width: auto;
+    height: auto;
+    background-color:transparent;
+    color: #0ef;
+    text-align: center;
+    z-index: 5;
+}
